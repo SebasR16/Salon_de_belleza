@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 
 import java.sql.Time;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Clock;
 import java.util.Calendar;
@@ -72,7 +73,7 @@ public class Agendar_cita extends AppCompatActivity {
     }
     private void actualizarInput2() {
         String formatoHora = "HH:mm"; //In which you need put here
-        SimpleTimeZone sdf = new SimpleTimeZone(0,"GTM");
-        //hora.setText(sdf.getRawOffset(tiempo.getTime()));
+        DateFormat horas = new SimpleDateFormat("HH:mm");
+        hora.setText(horas.format(tiempo.getTime()));
     }
 }
