@@ -15,10 +15,6 @@ public class Ver_citas extends AppCompatActivity {
     private adapterlista1 adaptador;
 
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

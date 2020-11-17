@@ -16,7 +16,7 @@ public class Menu_principal extends AppCompatActivity {
         setContentView(R.layout.activity_menu_principal);
 
         nueva_cita = (Button) findViewById(R.id.btnNuevacita);
-        ver_citas = (Button) findViewById(R.id.btnproveedores);
+        ver_citas = (Button) findViewById(R.id.btnvercitas);
 
         nueva_cita.setOnClickListener(new View.OnClickListener() {
             @Override

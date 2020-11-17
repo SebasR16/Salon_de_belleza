@@ -38,7 +38,7 @@ public class adapterlista1 extends BaseAdapter {
     @Override
     public View getView(int posicion, View view, ViewGroup viewGroup) {
         mLista item = (mLista) getItem(posicion);
-        view = LayoutInflater.from(context).inflate(R.layout.vercitas,null);
+        view = LayoutInflater.from(context).inflate(R.layout.item,null);
         TextView VNombre = (TextView) view.findViewById(R.id.nombre);
         TextView Vfecha = (TextView) view.findViewById(R.id.Fecha);
         TextView VHora = (TextView) view.findViewById(R.id.hora);

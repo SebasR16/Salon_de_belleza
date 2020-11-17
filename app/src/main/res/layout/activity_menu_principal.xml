@@ -7,7 +7,7 @@
     tools:context=".Menu_principal">
 
     <Button
-        android:id="@+id/btnproveedores"
+        android:id="@+id/btnvercitas"
         android:layout_width="149dp"
         android:layout_height="49dp"
         android:layout_marginTop="64dp"
