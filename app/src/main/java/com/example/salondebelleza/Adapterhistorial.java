@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class adapterlista1 extends BaseAdapter {
+public class Adapterhistorial extends BaseAdapter {
 
     private Context context;
     private ArrayList<mLista> listItem;
 
-    public adapterlista1(Context context, ArrayList<mLista> listItem) {
+    public Adapterhistorial(Context context, ArrayList<mLista> listItem) {
         this.context = context;
         this.listItem = listItem;
     }
@@ -37,10 +37,10 @@ public class adapterlista1 extends BaseAdapter {
     @Override
     public View getView(int posicion, View view, ViewGroup viewGroup) {
         mLista item = (mLista) getItem(posicion);
-        view = LayoutInflater.from(context).inflate(R.layout.item,null);
-        TextView VNombre = (TextView) view.findViewById(R.id.nombre);
-        TextView Vfecha = (TextView) view.findViewById(R.id.editfecha);
-        TextView VHora = (TextView) view.findViewById(R.id.edithora);
+        view = LayoutInflater.from(context).inflate(R.layout.historial,null);
+        TextView VNombre = (TextView) view.findViewById(R.id.nombreH);
+        TextView Vfecha = (TextView) view.findViewById(R.id.fechaH);
+        TextView VHora = (TextView) view.findViewById(R.id.horaH);
         TextView VDinero = (TextView) view.findViewById(R.id.montoH);
         System.out.println("Aqui esta el name: "+item.getNombre());
         VNombre.setText(item.getNombre());
@@ -49,8 +49,4 @@ public class adapterlista1 extends BaseAdapter {
         VDinero.setText(item.getDinero());
         return view;
     }
-
-
-
-
 }

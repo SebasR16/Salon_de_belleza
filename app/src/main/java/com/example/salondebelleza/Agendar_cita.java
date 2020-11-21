@@ -10,13 +10,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
-import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Clock;
 import java.util.Calendar;
 import java.util.Locale;
-import java.util.SimpleTimeZone;
 
 public class Agendar_cita extends AppCompatActivity {
     EditText fecha,hora;
@@ -27,8 +24,8 @@ public class Agendar_cita extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agendar_cita);
-        fecha = findViewById(R.id.Fecha);
-        hora =  findViewById(R.id.hora);
+        fecha = findViewById(R.id.editfecha);
+        hora =  findViewById(R.id.edithora);
 
         fecha.setOnClickListener(new View.OnClickListener() {
             @Override

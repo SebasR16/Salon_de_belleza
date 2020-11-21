@@ -4,26 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#c381d1"
     tools:context=".Menu_principal">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menú"
+        android:textColor="#f9f9f7"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.081" />
+
+    <Button
+        android:id="@+id/btnhistorial"
+        android:layout_width="221dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="40dp"
+        android:background="#85399a"
+        android:text="Historial de citas"
+        android:textColor="#f9f9f7"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnvercitas" />
 
     <Button
         android:id="@+id/btnvercitas"
-        android:layout_width="149dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="224dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="40dp"
+        android:background="#85399a"
         android:text="Ver citas"
-        android:textSize="18sp"
+        android:textColor="#f9f9f7"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNuevacita" />
 
     <Button
+        android:id="@+id/catalogo"
+        android:layout_width="218dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="44dp"
+        android:background="#85399a"
+        android:text="catalogo"
+        android:textColor="#f9f9f7"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnhistorial" />
+
+    <Button
         android:id="@+id/btnNuevacita"
-        android:layout_width="149dp"
-        android:layout_height="49dp"
+        android:layout_width="223dp"
+        android:layout_height="53dp"
         android:layout_marginTop="156dp"
+        android:background="#85399a"
         android:text="Agendar cita"
-        android:textSize="18sp"
+        android:textColor="#f9f9f7"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

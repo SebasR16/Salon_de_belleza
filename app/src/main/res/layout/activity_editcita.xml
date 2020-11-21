@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#c381d1"
-    tools:context=".Agendar_cita">
+    tools:context=".editcita">
 
     <Button
         android:id="@+id/editguardar"
-        android:layout_width="126dp"
-        android:layout_height="52dp"
+        android:layout_width="220dp"
+        android:layout_height="49dp"
         android:layout_marginTop="64dp"
         android:background="#85399a"
-        android:text="Agendar"
+        android:text="Guardar cambios"
         android:textColor="#f9f9f7"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,12 +84,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Agendar Cita"
+        android:text="Editar Cita"
         android:textColor="#f9f9f7"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,13 +11,13 @@ public class Menu_principal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Button nueva_cita,ver_citas;
+        Button nueva_cita,ver_citas,historialcitas,catalogo;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
 
         nueva_cita = (Button) findViewById(R.id.btnNuevacita);
         ver_citas = (Button) findViewById(R.id.btnvercitas);
-
+        historialcitas = (Button) findViewById(R.id.btnhistorial);
         nueva_cita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,6 +32,15 @@ public class Menu_principal extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(v.getContext(), Ver_citas.class);
+                startActivityForResult(intent, 0);
+                finish();
+            }
+        });
+        historialcitas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(v.getContext(), historial.class);
                 startActivityForResult(intent, 0);
                 finish();
             }

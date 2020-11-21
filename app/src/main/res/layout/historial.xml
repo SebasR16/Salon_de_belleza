@@ -10,52 +10,34 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/nombre"
+            android:id="@+id/nombreH"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/editfecha"
+            android:id="@+id/fechaH"
             android:layout_width="111dp"
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/edithora"
+            android:id="@+id/horaH"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/montoH"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/pago"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:background="#3C9A32"
 
-
-            android:text="Pago"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/editar"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:background="#85399a"
-        android:text="Editar"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/eliminar"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:background="#FF4040"
-        android:text="eliminar"
-        android:textSize="18sp" />
 </LinearLayout>

@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c381d1">
+    android:background="#c381d1"
+    tools:context=".historial">
 
     <ListView
-        android:id="@+id/verLista"
+        android:id="@+id/verhistorial"
         android:layout_width="409dp"
         android:layout_height="638dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -15,11 +16,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textcitas"
+        android:id="@+id/texthistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Citas pendientes"
+        android:text="Historial de citas"
         android:textColor="#f9f9f7"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -27,4 +28,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
