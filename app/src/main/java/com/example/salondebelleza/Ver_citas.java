@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,15 +28,25 @@ public class Ver_citas extends AppCompatActivity {
          adaptador = new adapterlista1(this,GetArrayitem());
         lista.setAdapter(adaptador);
 
-        LayoutInflater inflater = getLayoutInflater();
+        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         View v = inflater.inflate(R.layout.item,null);
         Pagar = v.findViewById(R.id.pago);
-        //System.out.println("Que es esto: " + Pagar.getName);
+        //No entra el clickListener
         Pagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 System.out.println("Chingen a su madre fuera del metodo");
                 mostrardialogo();
+            }
+        });
+        Editar = v.findViewById(R.id.editar);
+        Editar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), editcita.class);
+                startActivityForResult(intent, 0);
+                finish();
             }
         });
 
