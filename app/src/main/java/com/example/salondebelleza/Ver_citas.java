@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,8 +27,7 @@ public class Ver_citas extends AppCompatActivity {
     private ListView lista;
     private adapterlista1 adaptador;
     private Button Editar,Eliminar,Pagar;
-    private Context context;
-   private  ArrayList<mLista> datos;
+    private  ArrayList<mLista> datos;
     EditText cantidad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class Ver_citas extends AppCompatActivity {
         lista.setAdapter(adaptador);
 
         LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-lista.setClickable(true);
+        lista.setClickable(true);
         View v = inflater.inflate(R.layout.item,null);
         //Pagar = v.findViewById(R.id.pago);
         //No entra el clickListener
@@ -49,8 +50,6 @@ lista.setClickable(true);
 
             }
         });
-
-
 
     }
 
@@ -72,24 +71,21 @@ lista.setClickable(true);
 
         }
         private void mostrardialogo(final mLista value){
-        AlertDialog.Builder builder = new AlertDialog.Builder(Ver_citas.this);
-        LayoutInflater inflater = getLayoutInflater();
+        final AlertDialog.Builder builder = new AlertDialog.Builder(Ver_citas.this);
+        final AlertDialog.Builder builder2 = new AlertDialog.Builder(Ver_citas.this);
+
+            LayoutInflater inflater = getLayoutInflater();
             System.out.println(value.getNombre());
         View view = inflater.inflate(R.layout.opciones,null);
         builder.setView(view);
         final AlertDialog dialog = builder.create();
+
         dialog.show();
             System.out.println("chingen a su madre");
-       // Pagar = (Button) findViewById(R.id.pago);
             System.out.println("la tuya en vinagre");
-           /* Button registrar= view.findViewById(R.id.registrar);
-            registrar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-*/       Button BtnEditar=view.findViewById(R.id.btnEditar);
+            System.out.println("Que gracioso felix gutierrez te wa madrear");
+
+          Button BtnEditar=view.findViewById(R.id.btnEditar);
             BtnEditar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -100,7 +96,7 @@ lista.setClickable(true);
                     intent.putExtra("hora", value.getHora());
                     intent.putExtra("telefono",value.getTelefono());
                     startActivity(intent);
-                    
+
                 }
             });
             Button BtnPagar=view.findViewById(R.id.btnPagar);
@@ -108,15 +104,31 @@ lista.setClickable(true);
                 @Override
                 public void onClick(View view) {
                     mostrardialogoPago(value);
+                    dialog.dismiss();
                 }
             });
             Button BtnBorrar=view.findViewById(R.id.btnBorrar);
             BtnBorrar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                 eliminar(value);
-                    finish();
-                    startActivity(getIntent());
+                    builder2.setTitle("Nota");
+                    builder2.setMessage("¿Seguro que desea eliminar esta cita?");
+                    builder2.setCancelable(false);
+                    builder2.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialogo1, int id) {
+                            Toast.makeText(getApplicationContext(), "Se ha eliminado la cita", Toast.LENGTH_SHORT).show();
+                            eliminar(value);
+                            finish();
+                            startActivity(getIntent());
+                        }
+                    });
+                    builder2.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialogo1, int id) {
+                            finish();
+                        }
+                    });
+                    builder2.show();
+
                 }
             });
     }
@@ -137,9 +149,6 @@ private  void  eliminar(final mLista value){
         final AlertDialog dialog = builder.create();
 
         dialog.show();
-        System.out.println("chingen a su madre");
-
-        System.out.println("la tuya en vinagre");
         cantidad=view.findViewById(R.id.txtCantidad);
            Button registrar= view.findViewById(R.id.registrar);
         final RadioButton rbEfectivo= view.findViewById(R.id.radioefectivo);
@@ -149,17 +158,25 @@ private  void  eliminar(final mLista value){
                 public void onClick(View view) {
                     String n=cantidad.getText().toString();
                     System.out.println(n);
-                        if (rbEfectivo.isChecked()){
-                            db.execSQL("UPDATE "+"citas"+" SET tipoPago ='Efectivo', dinero=  '"+n+" 'WHERE id = "+"'"+value.getId()+"'");
-
-                        }
-                    if (rbTarjeta.isChecked()){
-                        db.execSQL("UPDATE "+"citas"+" SET tipoPago ='Tarjeta', dinero=  '"+n+" 'WHERE id = "+"'"+value.getId()+"'");
+                    if(cantidad.getText().toString().isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Por favor el monto total de su cita", Toast.LENGTH_SHORT).show();
 
                     }
+                    if (!rbEfectivo.isChecked() && !rbTarjeta.isChecked()) {
+                        Toast.makeText(getApplicationContext(), "Por favor seleccione un metodo de pago", Toast.LENGTH_SHORT).show();
 
+                    }else{
 
-                    dialog.dismiss();
+                        if (rbEfectivo.isChecked()) {
+                            db.execSQL("UPDATE " + "citas" + " SET tipoPago ='Efectivo', dinero=  '" + n + " 'WHERE id = " + "'" + value.getId() + "'");
+
+                        }
+                        if (rbTarjeta.isChecked()) {
+                            db.execSQL("UPDATE " + "citas" + " SET tipoPago ='Tarjeta', dinero=  '" + n + " 'WHERE id = " + "'" + value.getId() + "'");
+
+                        }
+                        dialog.dismiss();
+                    }
                 }
             });
 

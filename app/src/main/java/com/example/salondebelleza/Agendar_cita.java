@@ -1,4 +1,5 @@
 package com.example.salondebelleza;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,7 @@ public class Agendar_cita extends AppCompatActivity {
     Calendar calendario = Calendar.getInstance();
     Calendar tiempo = Calendar.getInstance();
 
-    Button btnCita;
+    Button btnCita,btncancelar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class Agendar_cita extends AppCompatActivity {
          btnCita=(Button) findViewById(R.id.editguardar);
          nombre=(EditText) findViewById(R.id.editnombre);
          telefono=(EditText)  findViewById(R.id.editcel);
+         btncancelar=(Button)findViewById(R.id.cancelar);
         fecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,16 +58,39 @@ public class Agendar_cita extends AppCompatActivity {
                 String f=fecha.getText().toString();
                 String h=hora.getText().toString();
                 String t=telefono.getText().toString();
-
-                    boolean status= dbHelper.addCita(n,f, h,t);
-                    if (status){
-                        Toast.makeText(getApplicationContext(), "Cita agendada correctamente", Toast.LENGTH_LONG).show();
+                    if (nombre.getText().toString().isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Ingrese el nombre de su cliente", Toast.LENGTH_SHORT).show();
+                    }
+                    if (fecha.getText().toString().isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Ingrese la fecha de su cita", Toast.LENGTH_SHORT).show();
+                    }
+                    if (hora.getText().toString().isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Ingrese la hora de su cita", Toast.LENGTH_SHORT).show();
+                    }
+                    if (telefono.getText().toString().isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Ingrese el telefono de su cliente", Toast.LENGTH_SHORT).show();
                     }else {
-                        Toast.makeText(getApplicationContext(), "Error al registrar", Toast.LENGTH_LONG).show();
+
+                        boolean status = dbHelper.addCita(n, f, h, t);
+                        if (status) {
+                            Toast.makeText(getApplicationContext(), "Cita agendada correctamente", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(view.getContext(), Menu_principal.class);
+                            startActivityForResult(intent, 0);
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Error al registrar", Toast.LENGTH_LONG).show();
+                        }
                     }
 
 
-
+            }
+        });
+        btncancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), Menu_principal.class);
+                startActivityForResult(intent, 0);
+                finish();
             }
         });
     }

@@ -9,8 +9,8 @@
 
     <ListView
         android:id="@+id/verhistorial"
-        android:layout_width="410dp"
-        android:layout_height="583dp"
+        android:layout_width="409dp"
+        android:layout_height="586dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -30,12 +30,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:layout_width="410dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="203dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texthistory">
 
@@ -50,16 +49,21 @@
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quincena"
+            android:layout_marginLeft="10dp"
+            android:text="Periodo"
             android:textSize="18sp" />
 
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Mes"
-            android:textSize="18sp" />
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/filtros"
+        android:layout_width="184dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:popupBackground="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texthistory" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

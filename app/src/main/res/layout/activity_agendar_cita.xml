@@ -11,12 +11,27 @@
         android:id="@+id/editguardar"
         android:layout_width="126dp"
         android:layout_height="52dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="52dp"
         android:background="#85399a"
         android:text="Agendar"
         android:textColor="#f9f9f7"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editcel" />
+
+    <Button
+        android:id="@+id/cancelar"
+        android:layout_width="126dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="68dp"
+        android:background="#85399a"
+        android:text="Cancelar"
+        android:textColor="#f9f9f7"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/editguardar"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editcel" />
 

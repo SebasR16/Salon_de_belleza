@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Salon de belleza</string>
+
+    <string-array name="periodos">
+        <item>Semana</item>
+        <item>Quincena</item>
+        <item>Mes</item>
+    </string-array>
+
+
 </resources>

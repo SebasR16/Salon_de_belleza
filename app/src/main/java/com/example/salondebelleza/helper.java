@@ -27,8 +27,8 @@ public boolean addCita(String n, String f, String h, String t){
     c.put("fecha",f);
     c.put("hora",h);
     c.put("telefono",t);
-c.put("dinero",0);
-c.put("tipoPago","ninguno");
+    c.put("dinero",0);
+    c.put("tipoPago","ninguno");
     long result=db.insert("citas",null,c);
     if (result==-1){
         return false;

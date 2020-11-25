@@ -24,7 +24,7 @@ public class Menu_principal extends AppCompatActivity {
 
                 Intent intent = new Intent(v.getContext(), Agendar_cita.class);
                 startActivityForResult(intent, 0);
-                finish();
+                //finish();
             }
         });
         ver_citas.setOnClickListener(new View.OnClickListener() {
@@ -33,7 +33,7 @@ public class Menu_principal extends AppCompatActivity {
 
                 Intent intent = new Intent(v.getContext(), Ver_citas.class);
                 startActivityForResult(intent, 0);
-                finish();
+                //finish();
             }
         });
         historialcitas.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +42,7 @@ public class Menu_principal extends AppCompatActivity {
 
                 Intent intent = new Intent(v.getContext(), historial.class);
                 startActivityForResult(intent, 0);
-                finish();
+                //finish();
             }
         });
     }

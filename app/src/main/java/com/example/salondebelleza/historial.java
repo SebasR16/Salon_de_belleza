@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 
@@ -13,6 +16,10 @@ public class historial extends AppCompatActivity {
 
     private ListView lista;
     private Adapterhistorial adaptador;
+    private RadioButton Dia,Periodo;
+    private Spinner seleccionar;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +27,14 @@ public class historial extends AppCompatActivity {
         lista = (ListView) findViewById(R.id.verhistorial);
         adaptador = new Adapterhistorial(this,GetArrayitem());
         lista.setAdapter(adaptador);
+        seleccionar = (Spinner) findViewById(R.id.filtros);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.periodos, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        seleccionar.setAdapter(adapter);
+
     }
-
-
-
 
     private ArrayList<mLista> GetArrayitem(){
         final helper dbHelper=new helper(this);
@@ -42,10 +53,6 @@ public class historial extends AppCompatActivity {
         c.close();
         db.close();
 
-
-        //listItems.add(new mLista("Felix","8/10/2020","8:00","150"));
-        //listItems.add(new mLista("sebas","10/9/2020","9:00","200"));
-        //listItems.add(new mLista("pol","26/11/2020","11:00","300"));
         return listItems;
 
     }

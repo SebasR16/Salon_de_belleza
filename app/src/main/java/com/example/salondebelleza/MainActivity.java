@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         if(db !=null){
             String pathDatabase = getDatabasePath("salon.sqlite.db").getAbsolutePath();
             System.out.println(pathDatabase);
-           db.execSQL("INSERT INTO usuarios (user, pass) VALUES ('Admin','1234')");
+           //db.execSQL("INSERT INTO usuarios (user, pass) VALUES ('Admin','1234')");
         }
         iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,19 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(count);
 
 
+
 if(Integer.parseInt(count)>0){
     Intent intent = new Intent(v.getContext(), Menu_principal.class);
-
     startActivity(intent );
-
+    finish();
 }else{
     System.out.println("no existe");
 }
-
-
-
-
-
             }
         });
     }
