@@ -30,32 +30,6 @@
             android:textSize="16dp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/pago"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:background="#3C9A32"
-
-
-            android:text="Pago"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/editar"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:background="#85399a"
-        android:text="Editar"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/eliminar"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:background="#FF4040"
-        android:text="eliminar"
-        android:textSize="18sp" />
 </LinearLayout>

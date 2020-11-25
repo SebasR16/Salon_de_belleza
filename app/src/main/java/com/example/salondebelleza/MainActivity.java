@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         helper dbHelper=new helper(this);
         final SQLiteDatabase db=dbHelper.getWritableDatabase();
         if(db !=null){
+            String pathDatabase = getDatabasePath("salon.sqlite.db").getAbsolutePath();
+            System.out.println(pathDatabase);
            db.execSQL("INSERT INTO usuarios (user, pass) VALUES ('Admin','1234')");
         }
         iniciar.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 String query=" select count(*) from usuarios where user ='"+usuario.getText().toString()+"' and pass='"+pass.getText().toString()+"'";
                 System.out.println(query);
                 cursor =db.rawQuery(query,null);
+                System.out.println(  cursor.moveToFirst());
                 cursor.moveToFirst();
                 String count = cursor.getString(cursor.getColumnIndex(cursor.getColumnName(0)));
                 System.out.println(count);
@@ -41,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
 if(Integer.parseInt(count)>0){
     Intent intent = new Intent(v.getContext(), Menu_principal.class);
-    startActivityForResult(intent, 0);
+
+    startActivity(intent );
 
 }else{
     System.out.println("no existe");

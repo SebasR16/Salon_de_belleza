@@ -6,16 +6,32 @@ public class mLista {
     private String hora;
     private String dinero;
 
-    public mLista(String nombre,String fecha,String hora){
+    public String getTipoPago() {
+        return tipoPago;
+    }
+
+    private  String tipoPago;
+    public String getTelefono() {
+        return telefono;
+    }
+
+    private  String telefono;
+    private  int id;
+    public mLista( int id, String nombre,String fecha,String hora, String telefono){
         this.nombre=nombre;
         this.fecha = fecha;
         this.hora = hora;
+        this.id = id;
+        this.telefono=telefono;
     }
-    public mLista(String nombre,String fecha,String hora,String dinero){
+    public mLista(int id, String nombre,String fecha,String hora, String telefono,String dinero,String tipoPago){
         this.nombre=nombre;
         this.fecha = fecha;
         this.hora = hora;
         this.dinero =dinero;
+        this.id = id;
+        this.telefono=telefono;
+
     }
     public String getFecha() {
         return fecha;
@@ -31,4 +47,13 @@ public class mLista {
     public String getDinero() {
         return dinero;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }

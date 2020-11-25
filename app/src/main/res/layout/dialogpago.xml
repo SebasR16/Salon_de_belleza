@@ -30,7 +30,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/textView5"
+            android:id="@+id/txtCantidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Monto"
