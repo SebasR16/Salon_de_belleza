@@ -13,7 +13,6 @@ public class Adapterhistorial extends BaseAdapter {
 
     private Context context;
     private ArrayList<mLista> listItem;
-
     public Adapterhistorial(Context context, ArrayList<mLista> listItem) {
         this.context = context;
         this.listItem = listItem;
@@ -42,7 +41,7 @@ public class Adapterhistorial extends BaseAdapter {
         TextView Vfecha = (TextView) view.findViewById(R.id.fechaH);
         TextView VHora = (TextView) view.findViewById(R.id.horaH);
         TextView VDinero = (TextView) view.findViewById(R.id.montoH);
-        System.out.println("Aqui esta el name: "+item.getNombre());
+        System.out.println("Aqui esta el namdddddddde: "+item.getNombre());
         VNombre.setText(item.getNombre());
         Vfecha.setText(item.getFecha());
         VHora.setText(item.getHora());

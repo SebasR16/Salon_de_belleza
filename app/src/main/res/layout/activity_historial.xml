@@ -7,13 +7,27 @@
     android:background="#c381d1"
     tools:context=".historial">
 
+    <Button
+        android:id="@+id/aplicar"
+        android:layout_width="107dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="#85399a"
+        android:text="Aplicar"
+        android:textColor="#f9f9f7"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filtros" />
+
     <ListView
         android:id="@+id/verhistorial"
-        android:layout_width="409dp"
-        android:layout_height="586dp"
+        android:layout_width="403dp"
+        android:layout_height="569dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aplicar" />
 
     <TextView
         android:id="@+id/texthistory"
@@ -30,27 +44,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:layout_width="203dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal|left"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texthistory">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioDia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dia"
+            android:onClick="onRadioButtonClicked"
             android:textSize="18sp" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioPeriodo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:text="Periodo"
+            android:onClick="onRadioButtonClicked"
+
             android:textSize="18sp" />
 
     </RadioGroup>
@@ -59,7 +75,7 @@
         android:id="@+id/filtros"
         android:layout_width="184dp"
         android:layout_height="34dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:popupBackground="@android:color/white"
         android:textSize="18sp"
