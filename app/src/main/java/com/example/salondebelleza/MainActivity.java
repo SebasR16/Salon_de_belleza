@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
     EditText usuario;
     EditText pass;
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         usuario=(EditText) findViewById(R.id.username);
         pass=(EditText) findViewById(R.id.password);
         helper dbHelper=new helper(this);
+        Date fecha=new Date();
+
         final SQLiteDatabase db=dbHelper.getWritableDatabase();
         if(db !=null){
             String pathDatabase = getDatabasePath("salon.sqlite.db").getAbsolutePath();

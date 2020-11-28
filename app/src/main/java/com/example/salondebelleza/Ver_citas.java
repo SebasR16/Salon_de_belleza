@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Ver_citas extends AppCompatActivity {
 
@@ -55,12 +56,28 @@ public class Ver_citas extends AppCompatActivity {
 
         private ArrayList<mLista> GetArrayitem(){
             final helper dbHelper=new helper(this);
+            Date fechaActual=new Date();
+
             final SQLiteDatabase db=dbHelper.getWritableDatabase();
             ArrayList<mLista> listItems = new ArrayList<>();
             Cursor c = db.rawQuery("SELECT id, nombre,fecha,hora, telefono FROM citas ", null);
             if (c.moveToFirst()){
                 do {
-                    listItems.add(new mLista( c.getInt(0),c.getString(1), c.getString(2), c.getString(3), c.getString(4)));
+                    Date fecha =new Date();
+                    String[] fechad=c.getString(2).split("/");
+                    String[] hora=c.getString(3).split(":");
+                  fecha.setDate(Integer.parseInt( fechad[1])+1);
+                  fecha.setMonth(Integer.parseInt( fechad[0])-1);
+                    fecha.setYear(Integer.parseInt( "1"+fechad[2]));
+                    fecha.setHours(Integer.parseInt(hora[0]));
+                    fecha.setMinutes(Integer.parseInt(hora[1]));
+
+                    if (fecha.getTime()>fechaActual.getTime()) {
+                        System.out.println("fecha "+fecha.getTime());
+
+                        listItems.add(new mLista(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)));
+                    }
+
                 } while(c.moveToNext());
             }
             c.close();

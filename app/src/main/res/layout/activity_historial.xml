@@ -56,8 +56,9 @@
             android:id="@+id/radioDia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dia"
+            android:checked="true"
             android:onClick="onRadioButtonClicked"
+            android:text="Dia"
             android:textSize="18sp" />
 
         <RadioButton
