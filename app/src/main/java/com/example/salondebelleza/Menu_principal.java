@@ -18,6 +18,8 @@ public class Menu_principal extends AppCompatActivity {
         nueva_cita = (Button) findViewById(R.id.btnNuevacita);
         ver_citas = (Button) findViewById(R.id.btnvercitas);
         historialcitas = (Button) findViewById(R.id.btnhistorial);
+        catalogo = (Button) findViewById(R.id.btncatalogo);
+
         nueva_cita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +45,13 @@ public class Menu_principal extends AppCompatActivity {
                 Intent intent = new Intent(v.getContext(), historial.class);
                 startActivityForResult(intent, 0);
                 //finish();
+            }
+        });
+        catalogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), catalogo.class);
+                startActivityForResult(intent, 0);
             }
         });
     }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="260dp"
+    android:layout_height="260dp"
+    android:background="#c381d1"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titledialog"
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#f9f9f7"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/descripcion"
+        android:layout_width="244dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#f9f9f7"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/precio"
+        android:layout_width="243dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#f9f9f7"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:background="#85399a"
+        android:text="Entendido"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

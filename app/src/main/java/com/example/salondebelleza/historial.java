@@ -88,13 +88,26 @@ public class historial extends AppCompatActivity {
             if (c.moveToFirst()) {
                 do {
                     System.out.println(c.getString(6));
+                    Date fecha =new Date();
+                    String[] fechad=c.getString(2).split("/");
+                    String[] hora=c.getString(3).split(":");
+                    fecha.setDate(Integer.parseInt( fechad[1]));
+                    fecha.setMonth(Integer.parseInt( fechad[0])-1);
+                    fecha.setYear(Integer.parseInt( "1"+fechad[2]));
+                    fecha.setHours(Integer.parseInt(hora[0]));
+                    fecha.setMinutes(Integer.parseInt(hora[1]));
                     if (!c.getString(6).equals("ninguno")) {
                         String[] fechaDividida = c.getString(2).split("/");
                         String posicion = fechaDividida[1];
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTime(fechaActual);
+
                         System.out.println("posicion es :" + posicion);
                         System.out.println("el dia es:"+fechaActual.getDate());
-                        if (fechaActual.getDate() == Integer.parseInt(posicion)+1) {
+
+                        if (fechaActual.getDate() == Integer.parseInt(posicion)) {
                             System.out.println("entro aqui");
+
                             listItems.add(new mLista(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4), c.getString(5), c.getString(6)));
                         }
 
