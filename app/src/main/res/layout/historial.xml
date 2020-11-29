@@ -4,34 +4,35 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="116dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/nombreH"
-            android:layout_width="110dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/fechaH"
-            android:layout_width="111dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/horaH"
-            android:layout_width="110dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/montoH"
-            android:layout_width="110dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textSize="16dp"
             android:textStyle="bold" />

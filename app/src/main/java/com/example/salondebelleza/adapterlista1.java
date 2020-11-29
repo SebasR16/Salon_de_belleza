@@ -43,9 +43,9 @@ public class adapterlista1 extends BaseAdapter {
         TextView VHora = (TextView) view.findViewById(R.id.edithora);
         //TextView VDinero = (TextView) view.findViewById(R.id.montoH);
         System.out.println("Aqui esta el name: "+item.getNombre());
-        VNombre.setText(item.getNombre());
-        Vfecha.setText(item.getFecha());
-        VHora.setText(item.getHora());
+        VNombre.setText("Nombre: "+item.getNombre());
+        Vfecha.setText("Fecha: "+ item.getFecha());
+        VHora.setText("Hora: "+item.getHora());
         //VDinero.setText(item.getDinero());
         return view;
     }

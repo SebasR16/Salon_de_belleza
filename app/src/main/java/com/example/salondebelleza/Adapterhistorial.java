@@ -42,10 +42,10 @@ public class Adapterhistorial extends BaseAdapter {
         TextView VHora = (TextView) view.findViewById(R.id.horaH);
         TextView VDinero = (TextView) view.findViewById(R.id.montoH);
         System.out.println("Aqui esta el namdddddddde: "+item.getNombre());
-        VNombre.setText(item.getNombre());
-        Vfecha.setText(item.getFecha());
-        VHora.setText(item.getHora());
-        VDinero.setText(item.getDinero());
+        VNombre.setText("Nombre: "+item.getNombre());
+        Vfecha.setText("Fecha: "+item.getFecha());
+        VHora.setText("Hora: "+item.getHora());
+        VDinero.setText("Monto total: "+item.getDinero()+" $ MXN");
         return view;
     }
 }
