@@ -11,7 +11,7 @@ public class Menu_principal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Button nueva_cita,ver_citas,historialcitas,catalogo;
+        Button nueva_cita,ver_citas,historialcitas,catalogo, logout;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
 
@@ -19,6 +19,7 @@ public class Menu_principal extends AppCompatActivity {
         ver_citas = (Button) findViewById(R.id.btnvercitas);
         historialcitas = (Button) findViewById(R.id.btnhistorial);
         catalogo = (Button) findViewById(R.id.btncatalogo);
+        logout = (Button) findViewById(R.id.logout);
 
         nueva_cita.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,5 +55,14 @@ public class Menu_principal extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), MainActivity.class);
+                startActivityForResult(intent, 0);
+                finish();
+            }
+        });
+
     }
 }

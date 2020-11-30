@@ -176,7 +176,7 @@ private  void  eliminar(final mLista value){
                     String n=cantidad.getText().toString();
                     System.out.println(n);
                     if(cantidad.getText().toString().isEmpty()){
-                        Toast.makeText(getApplicationContext(), "Por favor el monto total de su cita", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Por favor ingrese el monto total de la cita", Toast.LENGTH_SHORT).show();
 
                     }
                     if (!rbEfectivo.isChecked() && !rbTarjeta.isChecked()) {

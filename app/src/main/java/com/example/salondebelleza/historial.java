@@ -104,12 +104,22 @@ public class historial extends AppCompatActivity {
 
                         System.out.println("posicion es :" + posicion);
                         System.out.println("el dia es:"+fechaActual.getDate());
+                        System.out.println("El dia de hoy es" + calendar.get(Calendar.DAY_OF_MONTH));
+                        if (fecha.getTime()<=fechaActual.getTime()  ) {
+                            System.out.println("entro aqui al chile");
+                            if(calendar.get(Calendar.DAY_OF_MONTH) == Integer.parseInt(posicion)){
+                                System.out.println("entro aqui alv");
+                                listItems.clear();
+                                listItems.add(new mLista(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4), c.getString(5), c.getString(6)));
+                                return listItems;
 
-                        if (fechaActual.getDate() == Integer.parseInt(posicion)) {
+                            }
+                        }
+                        /*if (fechaActual.getDate() == Integer.parseInt(posicion)) {
                             System.out.println("entro aqui");
 
                             listItems.add(new mLista(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4), c.getString(5), c.getString(6)));
-                        }
+                        }*/
 
                     }
 
@@ -141,7 +151,7 @@ public class historial extends AppCompatActivity {
                             calendar.add(Calendar.DAY_OF_YEAR, -7);
 
                             System.out.println("posicion es :" + posicion);
-                            if (fecha.getTime()<=fechaActual.getTime()  ) {
+                            if (fecha.getTime()<=fechaActual.getTime()) {
                                 System.out.println("fafaffaf"+fecha);
                                 System.out.println("fafafafaf"+ calendar.getTime().getTime());
                                 if(fecha.getTime()>calendar.getTime().getTime()){
@@ -208,18 +218,16 @@ public class historial extends AppCompatActivity {
                         System.out.println(c.getString(6));
                         if (!c.getString(6).equals("ninguno")) {
                             String[] fechaDividida = c.getString(2).split("/");
-                            String posicion = fechaDividida[1];
+                            String posicion = fechaDividida[0];
                             Calendar calendar = Calendar.getInstance();
 
                             calendar.setTime(fechaActual);
 
-                            calendar.add(Calendar.DAY_OF_YEAR, -7);
+                            calendar.add(Calendar.MONTH, +0);
 
-                            System.out.println("posicion es :" + posicion);
                             if (fecha.getTime()<=fechaActual.getTime()  ) {
-                                System.out.println("fafaffaf"+fecha);
-                                System.out.println("fafafafaf"+ calendar.getTime().getTime());
-                                if(fecha.getTime()>calendar.getTime().getTime()){
+
+                                if(calendar.get(Calendar.MONTH)+1== Integer.parseInt(posicion)){
 
                                     listItems.add(new mLista(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4), c.getString(5), c.getString(6)));
                                 }

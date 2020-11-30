@@ -48,10 +48,10 @@
             android:id="@+id/txtCantidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Monto $$"
+            android:hint="$ MXN"
             android:inputType="phone"
             android:textColor="#f9f9f7"
-            android:textColorHint="#f9f9f7" />
+            android:textColorHint="#80F9F9F7" />
 
     </RadioGroup>
 

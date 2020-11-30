@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Date;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button iniciar = (Button) findViewById(R.id.login);
+        Button salir = (Button) findViewById(R.id.salir);
         usuario=(EditText) findViewById(R.id.username);
         pass=(EditText) findViewById(R.id.password);
         helper dbHelper=new helper(this);
@@ -47,15 +49,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-if(Integer.parseInt(count)>0){
-    Intent intent = new Intent(v.getContext(), Menu_principal.class);
-    startActivity(intent );
-    finish();
-}else{
-    System.out.println("no existe");
-}
+            if(Integer.parseInt(count)>0){
+                Intent intent = new Intent(v.getContext(), Menu_principal.class);
+                startActivity(intent );
+                finish();
+            }else{
+                Toast.makeText(getApplicationContext(), "Usuario y/o contraseña incorrectos", Toast.LENGTH_SHORT).show();
             }
-        });
+                        }
+                    });
+        salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishAffinity();
+            }
+            });
     }
 
 
