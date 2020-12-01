@@ -42,8 +42,7 @@ public class Ver_citas extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         lista.setClickable(true);
         View v = inflater.inflate(R.layout.item,null);
-        //Pagar = v.findViewById(R.id.pago);
-        //No entra el clickListener
+
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -98,9 +97,6 @@ public class Ver_citas extends AppCompatActivity {
         final AlertDialog dialog = builder.create();
 
         dialog.show();
-            System.out.println("chingen a su madre");
-            System.out.println("la tuya en vinagre");
-            System.out.println("Que gracioso felix gutierrez te wa madrear");
 
           Button BtnEditar=view.findViewById(R.id.btnEditar);
             BtnEditar.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +109,7 @@ public class Ver_citas extends AppCompatActivity {
                     intent.putExtra("hora", value.getHora());
                     intent.putExtra("telefono",value.getTelefono());
                     startActivity(intent);
+                    finish();
 
                 }
             });
@@ -135,13 +132,14 @@ public class Ver_citas extends AppCompatActivity {
                         public void onClick(DialogInterface dialogo1, int id) {
                             Toast.makeText(getApplicationContext(), "Se ha eliminado la cita", Toast.LENGTH_SHORT).show();
                             eliminar(value);
-                            finish();
+                            dialog.dismiss();
                             startActivity(getIntent());
+                            finish();
                         }
                     });
                     builder2.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialogo1, int id) {
-                            finish();
+                            //finish();
                         }
                     });
                     builder2.show();
@@ -194,7 +192,8 @@ private  void  eliminar(final mLista value){
                         }
                         dialog.dismiss();
                     }
-                }
+                    startActivity(getIntent());
+                    finish(); }
             });
 
     }

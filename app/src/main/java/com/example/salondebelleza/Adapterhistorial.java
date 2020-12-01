@@ -41,7 +41,6 @@ public class Adapterhistorial extends BaseAdapter {
         TextView Vfecha = (TextView) view.findViewById(R.id.fechaH);
         TextView VHora = (TextView) view.findViewById(R.id.horaH);
         TextView VDinero = (TextView) view.findViewById(R.id.montoH);
-        System.out.println("Aqui esta el namdddddddde: "+item.getNombre());
         VNombre.setText("Nombre: "+item.getNombre());
         Vfecha.setText("Fecha: "+item.getFecha());
         VHora.setText("Hora: "+item.getHora());
